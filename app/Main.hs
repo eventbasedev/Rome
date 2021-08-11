@@ -29,7 +29,7 @@ main = do
         (header "Cache tool for Carthage")
   cmd <- execParser opts
   case cmd of
-    Nothing          -> putStrLn $ romeVersionToString romeVersion ++ " - Custom - Romam uno die non fuisse conditam."
+    Nothing          -> putStrLn $ romeVersionToString romeVersion ++ " - xcframework - Romam uno die non fuisse conditam."
     Just romeOptions -> do
       globalUUID <- UUID.nextRandom
       p          <- runReaderT (runExceptT (runRomeWithOptions romeOptions romeVersion)) globalUUID
