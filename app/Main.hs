@@ -13,7 +13,7 @@ import           System.Exit
 
 
 romeVersion :: RomeVersion
-romeVersion = (0, 23, 3, 64)
+romeVersion = (0, 23, 3, 99999)
 
 
 
@@ -29,7 +29,7 @@ main = do
         (header "Cache tool for Carthage")
   cmd <- execParser opts
   case cmd of
-    Nothing          -> putStrLn $ romeVersionToString romeVersion ++ " - Romam uno die non fuisse conditam."
+    Nothing          -> putStrLn $ romeVersionToString romeVersion ++ " - xcframework - Romam uno die non fuisse conditam."
     Just romeOptions -> do
       globalUUID <- UUID.nextRandom
       p          <- runReaderT (runExceptT (runRomeWithOptions romeOptions romeVersion)) globalUUID
